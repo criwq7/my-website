@@ -2,33 +2,268 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Vxpour | Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vxpour | Full-Stack Developer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="hero">
+<!-- Particle Background -->
+<div id="particles"></div>
 
-  <div class="hero-left">
-    <h1>Vxpour's the best<br>Full-Stack Developer</h1>
-    <p>I'm a full-stack developer passionate about creating beautiful, functional, and performant web applications.</p>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-logo">Vxpour</div>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-    <div class="buttons">
-      <button>View Projects →</button>
-      <button class="outline">Contact Me</button>
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div class="hero-left fade-in-up">
+      <h1>Vxpour's the best<br><span class="gradient-text">Full-Stack Developer</span></h1>
+      <p>I'm a 17-year-old self-taught developer passionate about creating beautiful, functional, and performant web applications.</p>
+      <div class="buttons">
+        <button class="btn-primary" onclick="scrollToSection('skills')">View Skills →</button>
+        <button class="btn-outline" onclick="scrollToSection('contact')">Contact Me</button>
+      </div>
+    </div>
+    
+    <div class="hero-right fade-in-up delay-1">
+      <div class="glass-card profile-card">
+        <div class="avatar">V</div>
+        <h3>Vxpour</h3>
+        <p class="username">@vxpour</p>
+        <div class="status">
+          <div class="status-dot"></div>
+          Available for work
+        </div>
+        <div class="quick-stats">
+          <div class="stat">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Years</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  
+  <div class="scroll-indicator">
+    <div class="mouse"></div>
+  </div>
+</section>
 
-  <div class="hero-right">
-    <div class="card">
-      <div class="avatar">V</div>
-      <h3>Vxpour</h3>
-      <p>@vxpour</p>
-      <div class="status">No active status<br><small>Just chilling…</small></div>
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="container">
+    <h2 class="section-title fade-in">About Me</h2>
+    <p class="section-subtitle fade-in">A little more detail about who I am, what I do, and what keeps me going.</p>
+    
+    <div class="accordion">
+      <div class="accordion-item glass-card fade-in-up delay-1" data-expanded="true">
+        <div class="accordion-header">
+          <div class="accordion-icon">👤</div>
+          <h3>Who I Am</h3>
+          <span class="accordion-toggle">−</span>
+        </div>
+        <div class="accordion-content">
+          <p>Currently, I'm a 17-year-old self-taught developer. Coding has been a part of my life as a passion project rather than just a job. I love building things from scratch. My initial curiosity about how websites and software are developed has expanded into a burning desire to build innovative, simple, and smooth applications.</p>
+        </div>
+      </div>
+      
+      <div class="accordion-item glass-card fade-in-up delay-2">
+        <div class="accordion-header">
+          <div class="accordion-icon">💼</div>
+          <h3>What I Do</h3>
+          <span class="accordion-toggle">+</span>
+        </div>
+        <div class="accordion-content">
+          <p>I specialize in full-stack development, creating responsive web applications with modern frameworks. From elegant frontends with React and Next.js to robust backends with Node.js and PostgreSQL, I build complete solutions that solve real problems.</p>
+        </div>
+      </div>
+      
+      <div class="accordion-item glass-card fade-in-up delay-3">
+        <div class="accordion-header">
+          <div class="accordion-icon">🚀</div>
+          <h3>What Drives Me</h3>
+          <span class="accordion-toggle">+</span>
+        </div>
+        <div class="accordion-content">
+          <p>The endless possibilities of technology fuel my passion. I'm driven by the challenge of solving complex problems, learning new technologies, and creating experiences that people love to use. Every project is an opportunity to push boundaries and grow.</p>
+        </div>
+      </div>
+      
+      <div class="accordion-item glass-card fade-in-up delay-4">
+        <div class="accordion-header">
+          <div class="accordion-icon">⭐</div>
+          <h3>Highlights</h3>
+          <span class="accordion-toggle">+</span>
+        </div>
+        <div class="accordion-content">
+          <p>Self-taught developer since age 14 • Built 50+ projects • Proficient in 15+ technologies • Active open-source contributor • Fast learner with a growth mindset • Passionate about clean code and best practices</p>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-</div>
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+  <div class="container">
+    <h2 class="section-title fade-in">Technical <span class="gradient-text">Ecosystem</span></h2>
+    <p class="section-subtitle fade-in">Interactive visualization of my technical stack. Drag the cards to explore the connections.</p>
+    
+    <button class="reset-btn" onclick="resetLayout()">↻ Reset Layout</button>
+    
+    <div class="skills-canvas">
+      <svg id="connections" class="connections-svg"></svg>
+      
+      <div class="skill-category glass-card" id="frontend" style="top: 100px; left: 100px;">
+        <div class="category-header">
+          <div class="category-icon">💻</div>
+          <div>
+            <h3>Frontend</h3>
+            <span class="skill-count">10 Skills</span>
+          </div>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+          <span class="tech-tag">JavaScript (ES6+)</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Next.js</span>
+          <span class="tech-tag">Tailwind CSS</span>
+          <span class="tech-tag">Framer Motion</span>
+          <span class="tech-tag">Vite</span>
+          <span class="tech-tag">Webpack</span>
+        </div>
+      </div>
+      
+      <div class="skill-category glass-card" id="backend" style="top: 100px; right: 100px;">
+        <div class="category-header">
+          <div class="category-icon">⚙️</div>
+          <div>
+            <h3>Backend</h3>
+            <span class="skill-count">8 Skills</span>
+          </div>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">C#</span>
+          <span class="tech-tag">C++</span>
+          <span class="tech-tag">Rust</span>
+          <span class="tech-tag">Express.js</span>
+          <span class="tech-tag">Lua</span>
+          <span class="tech-tag">FastAPI</span>
+        </div>
+      </div>
+      
+      <div class="skill-category glass-card" id="devops" style="bottom: 100px; left: 100px;">
+        <div class="category-header">
+          <div class="category-icon">🔧</div>
+          <div>
+            <h3>DevOps</h3>
+            <span class="skill-count">5 Skills</span>
+          </div>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Git</span>
+          <span class="tech-tag">Nginx</span>
+          <span class="tech-tag">Vercel</span>
+          <span class="tech-tag">Netlify</span>
+        </div>
+      </div>
+      
+      <div class="skill-category glass-card" id="database" style="bottom: 100px; right: 100px;">
+        <div class="category-header">
+          <div class="category-icon">💾</div>
+          <div>
+            <h3>Data</h3>
+            <span class="skill-count">3 Skills</span>
+          </div>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Prisma</span>
+          <span class="tech-tag">MongoDB</span>
+        </div>
+      </div>
+      
+      <div class="center-hub" id="hub">
+        <div class="hub-icon">💻</div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="section-title fade-in">Send a <span class="gradient-text">message</span></h2>
+    <p class="section-subtitle fade-in">Choose your preferred way to reach me. Direct in-app messaging is recommended!</p>
+    
+    <div class="contact-tabs">
+      <button class="tab-btn active" data-tab="direct">Direct (In-app)</button>
+      <button class="tab-btn" data-tab="social">Social</button>
+    </div>
+    
+    <div class="tab-content active" id="direct">
+      <div class="glass-card contact-card fade-in-up">
+        <div class="contact-method">
+          <div class="method-icon">💬</div>
+          <div class="method-info">
+            <h3>Message me directly</h3>
+            <p>Fastest & most secure way to get in touch.</p>
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <input type="email" placeholder="Your email" required>
+          <textarea placeholder="Your message..." rows="4" required></textarea>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="tab-content" id="social">
+      <div class="social-links fade-in-up">
+        <a href="#" class="social-link glass-card">
+          <div class="social-icon">📧</div>
+          <span>Email</span>
+        </a>
+        <a href="#" class="social-link glass-card">
+          <div class="social-icon">💼</div>
+          <span>LinkedIn</span>
+        </a>
+        <a href="#" class="social-link glass-card">
+          <div class="social-icon">🐙</div>
+          <span>GitHub</span>
+        </a>
+        <a href="#" class="social-link glass-card">
+          <div class="social-icon">🐦</div>
+          <span>Twitter</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>© 2026 Vxpour. Built with passion and code.</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
