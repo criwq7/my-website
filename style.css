@@ -1,49 +1,77 @@
 body {
-  background: #0a0a0a;
+  background: #0a0f14;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: Inter, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 
-header {
-  padding: 100px 20px;
-  font-size: 2em;
+/* HERO SECTION */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
 }
 
-section {
-  padding: 60px 20px;
-  max-width: 800px;
-  margin: auto;
+/* LEFT TEXT */
+.hero-left h1 {
+  font-size: 60px;
+  line-height: 1.1;
 }
 
-h2 {
-  color: #00ffff;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  padding: 5px;
+.hero-left p {
+  color: #aaa;
+  max-width: 500px;
   font-size: 18px;
 }
 
-footer {
-  padding: 30px;
-  background: black;
-  color: gray;
-}
-.fade {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.8s ease;
+.buttons {
+  margin-top: 20px;
 }
 
-.show {
-  opacity: 1;
-  transform: translateY(0);
+button {
+  padding: 12px 20px;
+  border-radius: 20px;
+  border: none;
+  background: #1f2933;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button.outline {
+  background: transparent;
+  border: 1px solid #333;
+}
+
+/* RIGHT CARD */
+.hero-right .card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  padding: 30px;
+  border-radius: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+/* AVATAR */
+.avatar {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, cyan, purple);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin: auto;
+}
+
+/* STATUS TEXT */
+.status {
+  margin-top: 20px;
+  color: gray;
+  font-size: 14px;
 }
